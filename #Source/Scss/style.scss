@@ -101,6 +101,7 @@ $md4:479.98;
 	@include flexbox();
 	flex-direction: column;
 	align-items: center;
+	text-align: center;
 	@media (max-width: $md2 + px){
 		padding: 0px 30px;
 	};
@@ -108,6 +109,10 @@ $md4:479.98;
 		padding: 0px 10px;
 	};
 	height: 100%;
+}
+.main-body-top {
+	height: 100%;
+	border: 1px solid black;
 }
 .main__title {
 	text-align: center;
@@ -142,7 +147,7 @@ $md4:479.98;
 	@media (max-height: 950px){
 		margin-bottom: 30px;
 	};
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 }
 .main__phone {
 	background-size: contain;
