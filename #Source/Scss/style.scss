@@ -86,7 +86,6 @@ $md4:479.98;
 // Основной блок
 // ================================== 
 .FirstScreen {
-	//overflow: hidden;
 	height: 100vh;
 	margin-bottom: 70px;
 	@include flexbox();
@@ -111,8 +110,7 @@ $md4:479.98;
 	height: 100%;
 }
 .main-body-top {
-	height: 100%;
-	border: 1px solid black;
+	height: 60%;
 }
 .main__title {
 	text-align: center;
@@ -141,7 +139,7 @@ $md4:479.98;
 }
 .main__button {
 	span{
-		background: url('../Img/Main/Icon_01.png') no-repeat left;
+		background: url('../Img/Main/icon_01.png') no-repeat left;
 		padding-left: 25px;
 	}
 	@media (max-height: 950px){

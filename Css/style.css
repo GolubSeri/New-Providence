@@ -241,8 +241,7 @@ header {
 }
 
 .main-body-top {
-  height: 100%;
-  border: 1px solid black;
+  height: 60%;
 }
 
 .main__title {
@@ -295,7 +294,7 @@ header {
   margin-bottom: 60px;
 }
 .main__button span {
-  background: url("../Img/Main/Icon_01.png") no-repeat left;
+  background: url("../Img/Main/icon_01.png") no-repeat left;
   padding-left: 25px;
 }
 @media (max-height: 950px) {
