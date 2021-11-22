@@ -2,8 +2,8 @@
 @mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;font-size: 0;}
 
 // Ширина всего макета
-$maxWidth: 1440;
-$maxWidthContainer: 1083;
+$maxWidth: 1600;
+$maxWidthContainer: 1170;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
 	$addSize: $startSize - $minSize;
@@ -26,15 +26,15 @@ $maxWidthContainer: 1083;
 }
 
 // Подключаем шрифты
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Varela+Round&display=swap');
 
 // Шрифт по умолчанию
-$fontfamily:"";
+$fontfamily:"Lato";
 
 // Переменные
-$mw: 880;
+$mw: 1170;
 $minwidth: 320px;
-$md1:$mw+12;
+$md1:$mw+30;
 $md2:992.98;
 $md3:767.98;
 $md4:479.98;
@@ -50,7 +50,7 @@ $md4:479.98;
 
 // Заготовки
 .ibg{
-	background-position: center;
+	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -60,10 +60,22 @@ $md4:479.98;
 
 // Основная сетка
 .container{
+
+	font-family: $fontfamily;
 	max-width: $mw+px; margin: 0 auto; width: 100%;
-	@media (max-width: $md1+px){max-width: 970px;}
-	@media (max-width: $md2+px){max-width: 750px;}
+	// @media (max-width: $md1+px){max-width: 970px;}
+	// @media (max-width: $md2+px){max-width: 750px;}
 	@media (max-width: $md3+px){max-width: none; padding: 0 10px;}
+
+	&.small{
+		max-width: 1100px;
+	}
+
+	&.first{
+		@include flexbox();
+		flex-direction: column;
+		height: 100%;
+	}
 }
 
 //Классы
@@ -73,7 +85,121 @@ $md4:479.98;
 
 // Основной блок
 // ================================== 
+.FirstScreen {
+	//overflow: hidden;
+	height: 100vh;
+	margin-bottom: 70px;
+	@include flexbox();
+	flex-direction: column;
+}
+.main {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+}
+.main-body {
+	@include flexbox();
+	flex-direction: column;
+	align-items: center;
+	@media (max-width: $md2 + px){
+		padding: 0px 30px;
+	};
+	@media (max-width: $md4 + px){
+		padding: 0px 10px;
+	};
+	height: 100%;
+}
+.main__title {
+	text-align: center;
+	font-family: 'Varela Round';
+	font-size: 62px;
+	@media (max-width: $md1 + px){
+		@include adaptiv-value('font-size', 62, 40, 1);
+	};
+	font-weight: 400;
+	color: #26272d;
+	margin-bottom: 44px;
+}
+.main__text {
+	max-width: 785px;
+	text-align: center;
+	font-size: 20px;
+	font-size: 20px;
+	line-height: 28px;
+	@media (max-width: $md1 + px){
+		@include adaptiv-value('font-size', 20, 18, 1);
+		@include adaptiv-value('line-height', 28, 24, 1);
+	};
+	font-weight: 400;
+	color: #8c8f94;
+	margin-bottom: 35px;
+}
+.main__button {
+	span{
+		background: url('../Img/Main/Icon_01.png') no-repeat left;
+		padding-left: 25px;
+	}
+	@media (max-height: 950px){
+		margin-bottom: 30px;
+	};
+	margin-bottom: 50px;
+}
+.main__phone {
+	background-size: contain;
+	background-position: bottom;
+	margin-left: 25px;
+	
+	@include flexbox();
+	flex-direction: column;
+	justify-content: flex-end;
+	width: 100%;
+	height: 100%;
+}
 
+// ==================================
+
+.features-columns {
+	justify-content: space-between;
+	@include flexbox();
+	position: relative;
+	padding-bottom: 126px;
+	margin-bottom: 130px;
+	&:after{
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		margin-left: -585px;
+		width: 1170px;
+		height: 1px;
+		background-color: #f5f5f5;
+	}
+}
+.features__item {
+	flex: 0 0 45%;
+}
+.item__image {
+	margin-bottom: 45px;
+}
+.item__title {
+	
+	font-size: 26px;
+	font-weight: 300;
+	color: #26272d;
+
+	margin-bottom: 45px;
+}
+.item__text {
+	font-size: 18px;
+	line-height: 26px;
+	font-weight: 400;
+	color: #8c8f94;
+	max-width: 500px;
+
+	p:first-child {
+		margin-bottom: 30px;
+	}
+}
 
 // ==================================
 
