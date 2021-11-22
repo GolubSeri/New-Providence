@@ -136,7 +136,6 @@ header {
 @media (max-width: 1200px) {
   .header-body {
     padding: 0px 20px;
-    margin-bottom: calc(70px + 60 * ((100vw - 320px) / 1280));
   }
 }
 
