@@ -12,6 +12,12 @@ header{
 		padding: 0px 20px;
 		//@include adaptiv-value('margin-bottom', 130, 70, 0);
 	};
+	@media (max-height: 900px){
+		margin-bottom: 80px;
+	};
+	@media (max-height: 800px){
+		margin-bottom: 50px;
+	};
 }
 .menu {
 	@include flexbox();
