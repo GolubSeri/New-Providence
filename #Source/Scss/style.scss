@@ -5,24 +5,34 @@
 $maxWidth: 1600;
 $maxWidthContainer: 1170;
 
-@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+// @mixin adaptiv-value($property, $startSize, $minSize, $type) {
+// 	$addSize: $startSize - $minSize;
+// 	@if $type==1 {
+// 		//Только если меньше контейнера
+// 		#{$property}: $startSize + px;
+// 		@media (max-width: #{$maxWidthContainer + px}) {
+// 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+// 		}
+// 	} @else if $type==2 {
+// 		//Только если больше контейнера
+// 		#{$property}: $startSize + px;
+// 		@media (min-width: #{$maxWidthContainer + px}) {
+// 			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+
+// 		}
+// 	} @else {
+// 		//Всегда
+// 		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+// 	}
+// }
+
+@mixin adaptiv-value($property, $startSize, $minSize, $size) {
 	$addSize: $startSize - $minSize;
-	@if $type==1 {
 		//Только если меньше контейнера
 		#{$property}: $startSize + px;
 		@media (max-width: #{$maxWidthContainer + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$size + px}) / #{$maxWidthContainer - $size}));
 		}
-	} @else if $type==2 {
-		//Только если больше контейнера
-		#{$property}: $startSize + px;
-		@media (min-width: #{$maxWidthContainer + px}) {
-			#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-		}
-	} @else {
-		//Всегда
-		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
-	}
 }
 
 // Подключаем шрифты
@@ -33,7 +43,7 @@ $fontfamily:"Lato";
 
 // Переменные
 $mw: 1170;
-$minwidth: 320px;
+// $minwidth: 320px;
 $md1:$mw+30;
 $md2:992.98;
 $md3:767.98;
@@ -60,7 +70,6 @@ $md4:479.98;
 
 // Основная сетка
 .container{
-
 	font-family: $fontfamily;
 	max-width: $mw+px; margin: 0 auto; width: 100%;
 	// @media (max-width: $md1+px){max-width: 970px;}
@@ -121,11 +130,11 @@ $md4:479.98;
 	font-family: 'Varela Round';
 	font-size: 62px;
 	@media (max-width: $md1 + px){
-		@include adaptiv-value('font-size', 62, 40, 1);
+		@include adaptiv-value('font-size', 62, 40, 320);
 	};
 	font-weight: 400;
 	color: #26272d;
-	@include adaptiv-value('margin-bottom', 45, 30, 0);
+	@include adaptiv-value('margin-bottom', 45, 30, 320);
 }
 .main__text {
 	max-width: 785px;
@@ -134,12 +143,12 @@ $md4:479.98;
 	font-size: 20px;
 	line-height: 28px;
 	@media (max-width: $md1 + px){
-		@include adaptiv-value('font-size', 20, 18, 1);
-		@include adaptiv-value('line-height', 28, 24, 1);
+		@include adaptiv-value('font-size', 20, 18, 320);
+		@include adaptiv-value('line-height', 28, 24, 320);
 	};
 	font-weight: 400;
 	color: #8c8f94;
-	@include adaptiv-value('margin-bottom', 35, 20, 0);
+	@include adaptiv-value('margin-bottom', 35, 20, 320);
 }
 .main__button {
 	span{
@@ -179,8 +188,8 @@ $md4:479.98;
 		bottom: 0;
 		margin-left: -585px;
 		width: 1170px;
-		@include adaptiv-value('width', 1170, 250, 0);
-		@include adaptiv-value('margin-left', -585, -125, 0);
+		@include adaptiv-value('width', 1170, 250, 320);
+		@include adaptiv-value('margin-left', -585, -125, 320);
 		height: 1px;
 		background-color: #f5f5f5;
 	}
@@ -188,8 +197,8 @@ $md4:479.98;
 	@media (max-width: $md1 + px){
 		margin-left: 30px;
 		margin-right: 30px;
-		@include adaptiv-value('padding-bottom', 130, 60, 0);
-		@include adaptiv-value('margin-bottom', 130, 60, 0);
+		@include adaptiv-value('padding-bottom', 130, 60, 320);
+		@include adaptiv-value('margin-bottom', 130, 60, 320);
 	};
 	@media (max-width: $md3 + px){
 		margin-left: 15px;
@@ -217,14 +226,14 @@ $md4:479.98;
 	flex-direction: column;
 }
 .item__image {
-	@include adaptiv-value('margin-bottom', 45, 25, 0);
+	@include adaptiv-value('margin-bottom', 45, 25, 320);
 }
 .item__title {
 	font-size: 26px;
 	font-weight: 300;
 	color: #26272d;
 
-	@include adaptiv-value('margin-bottom', 45, 25, 0);
+	@include adaptiv-value('margin-bottom', 45, 25, 320);
 }
 .item-body__text {
 	font-size: 18px;
@@ -234,13 +243,205 @@ $md4:479.98;
 	max-width: 500px;
 
 	p:first-child {
-		@include adaptiv-value('margin-bottom', 30, 20, 0);
+		@include adaptiv-value('margin-bottom', 30, 20, 320);
+	}
+}
+// ==================================
+
+.protect-body {
+	@include flexbox();
+	margin-bottom: 230px;
+}
+.protect-body-column {
+	flex: 0 0 50%;
+	@media (max-width: $md2 + px){
+		flex: 0 0 55%;
+	};
+}
+.protect-body-column__image {
+	height: 100%;
+	background-size: contain;
+	background-position: left center;
+}
+.protect-body-column-info {
+	margin-left: 50px;
+	margin-right: 30px;
+
+	@media (max-width: $md2 + px){
+		margin-left: 30px;
+	};
+
+}
+.protect-body-column__title {
+	font-family: 'Varela Round';
+	font-size: 42px;
+	font-weight: 400;
+	color: #26272d;
+
+	max-width: 240px;
+
+	margin-top: 130px;
+	margin-bottom: 70px;
+
+	@media (max-width: $md1 + px){
+		margin-bottom: 50px;
+	};
+
+	@media (max-width: $md2 + px){
+		margin-bottom: 35px;
+	};
+
+}
+.protect-body-column__text {
+	font-family: 'Lato';
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: 400;
+	color: #8c8f94;
+
+	max-width: 470px;
+	margin-bottom: 78px;
+
+	@media (max-width: $md1 + px){
+		margin-bottom: 45px;
+	};
+
+	@media (max-width: $md2 + px){
+		margin-bottom: 35px;
+	};
+
+	p{
+		margin-bottom: 35px;
+		@media (max-width: $md1 + px){
+			margin-bottom: 20px;
+		};
+	}
+	p:last-child {
+		margin: 0px 0px;
+	}
+}
+.protect-body-column-buttons {
+	@include flexbox();
+	align-items: flex-start;
+	flex-wrap: wrap;
+	margin-bottom: 190px;
+}
+.button__try {
+	span{
+		padding-right: 50px;
+		background: url('../Img/Protect/Icon_01.png') no-repeat right;
+		background-position: right 70%;
+	}
+	margin-right: 25px;
+	margin-bottom: 20px;
+}
+.button__more {}
+.btn--blue {}
+.btn--grey {}
+
+// ==================================
+
+.location {
+	.container{
+		max-width: $mw+100+px;
+	}
+	margin-bottom: 250px;
+}
+.location-body {
+	@include flexbox();
+	align-items: center;
+	@include adaptiv-value('margin-left', 50, 35, $md3);
+	@media (max-width: $md3 + px){
+		flex-wrap: wrap;
+		@include adaptiv-value('margin-left', 35, 10, 320);
+		@include adaptiv-value('margin-right', 35, 10, 320);
+	};
+}
+.location-body-info {
+	flex: 0 0 40%;
+	@media (max-width: $md3 + px){
+		margin-right: 0;
+		flex: 0 0 100%;
+	};
+	@include adaptiv-value('margin-right', 70, 40, $md3);
+}
+.location-body-info__title {
+	font-family: 'Varela Round';
+	@include adaptiv-value('font-size', 42, 37, $md3);
+	@include adaptiv-value('line-height', 52, 40, $md3);
+	@include adaptiv-value('margin-bottom', 60, 30, $md3);
+
+	@media (max-width: $md3 + px){
+		margin-bottom: 30px;
+		line-height: 35px;
+		max-width: 100%;
+	};
+
+	font-weight: 400;
+	color: #26272d;
+
+	max-width: 300px;
+	margin-bottom: 60px;
+}
+.location-body-info-text__text {
+	@include adaptiv-value('font-size', 20, 18, $md3);
+	font-weight: 400;
+	color: #8c8f94;
+	@include adaptiv-value('line-height', 28, 25, $md3);
+	p{
+		@include adaptiv-value('margin-bottom', 40, 30, $md3);	
+		@media (max-width: $md3 + px){
+			@include adaptiv-value('margin-bottom', 30, 20, 320);
+			@include adaptiv-value('line-height', 25, 22, 320);
+			@include adaptiv-value('font-size', 18, 16, 320);
+		};
+	}
+	p:last-child{
+		@include adaptiv-value('margin-bottom', 60, 40, $md3);
+		@media (max-width: $md3 + px){
+			@include adaptiv-value('margin-bottom', 40, 30, 320);
+		};
+	}
+
+}
+.location-body-info-text{
+	span{
+		display: block;
+		@include adaptiv-value('margin-bottom', 30, 20, $md3);
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: #26272d;
+		@media (max-width: $md3 + px){
+			margin-bottom: 20px;
+		};
+	}	
+}
+.location-body-info__partners {
+	@include flexbox();
+	flex-wrap: wrap;
+	img{
+		margin-right: 30px;
+		margin-bottom: 10px;
+	}
+	img:last-child{
+		margin-left: 0;
+	}
+	@media (max-width: $md3+ px){
+		margin-bottom: 40px;
+	};
+}
+.location-body__image {
+	img{
+		display: block;
+		width: 150%;
+		@media (max-width: $md3 + px){
+			width: 100%;
+		};
 	}
 }
 
-.amh1{
-
-}
 // ==================================
 
 // Подключаем footer

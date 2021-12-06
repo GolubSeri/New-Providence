@@ -39,7 +39,7 @@ header{
 	}
 
 	@media (max-width: $md1 + px){
-		@include adaptiv-value('margin-right', 40, 10, 0);
+		@include adaptiv-value('margin-right', 40, 10, 320);
 	};
 }
 .right {

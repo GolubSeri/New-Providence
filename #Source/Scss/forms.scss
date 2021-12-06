@@ -1,21 +1,18 @@
 // BUTTON 
 .btn{
 	display: inline-block;
+	font-family: 'Lato';
 	&--blue{
-		height: 42px;
-		line-height: 42px;
-		padding: 0px 22px;
+		font-size: 16px;
+		// height: 42px;
+		// line-height: 42px;
+		// padding: 0px 22px;
+
+		padding: 13px 22px;
+
 		border-radius: 30px;
 		color: #fff;
 		background-color: #267df4;
-		span{
-			padding-left: 26px;
-			background:  url('../Img/Header/Icon_02.png') no-repeat left;
-		}
-
-		@media (max-width: $md2 + px){
-			display: none;
-		};
 	}
 	&--burger{
 		margin-right: 30px;
@@ -24,12 +21,23 @@
 		background:  url('../Img/Header/Icon_01.png') no-repeat;
 	}
 	&--grey {
-		padding: 14px 40px;
+		padding: 12px 40px;
 		font-size: 16px;
-		font-weight: 400;
+		//font-weight: 400;
 		color: #26272d;
 		border: 1px #dadcdf solid;
 		border-radius: 30px;
+	}
+
+	&--get {
+		span{
+			padding-left: 26px;
+			background:  url('../Img/Header/Icon_02.png') no-repeat left;
+		}
+
+		@media (max-width: $md2 + px){
+			display: none;
+		};
 	}
 	&:hover{}
 	&.fw{width: 100%;}
