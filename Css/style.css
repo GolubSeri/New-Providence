@@ -1039,6 +1039,101 @@ header {
   }
 }
 
+.download {
+  background-color: #f5f5f8;
+  padding-top: 75px;
+  padding-bottom: 130px;
+}
+@media (max-width: 767.98px) {
+  .download {
+    padding-left: 0px 20px;
+    padding-right: 0px 20px;
+  }
+}
+
+.download-body {
+  text-align: center;
+}
+
+.download-body__logo {
+  opacity: 0.5;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #3a3d4b;
+  margin-bottom: 45px;
+}
+.download-body__logo span {
+  font-weight: 700;
+}
+
+.download-body__title {
+  font-family: "Varela Round";
+  font-size: 42px;
+  font-weight: 400;
+  color: #3a3d4b;
+  margin-bottom: 48px;
+}
+
+.download-body-form {
+  padding: 3px;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #cbcbce;
+  border-radius: 30px;
+  margin-bottom: 65px;
+  max-width: 500px;
+}
+.download-body-form__input {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3a3d4b;
+  min-width: 150px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: #3f414f;
+  background-color: #f5f5f8;
+}
+
+.download-body-form__button span {
+  padding-right: 30px;
+  background: url("../Img/Download/Icon_01.png") no-repeat right;
+  background-position: right 70%;
+}
+
+.download-body__text {
+  opacity: 0.3;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #3a3d4b;
+  margin-bottom: 20px;
+}
+
+.download-body__button {
+  display: block;
+  background: url("../Img/Download/Icon_02.png") no-repeat left;
+  background-position: 15% center;
+}
+.download-body__button span {
+  padding-left: 40px;
+}
+.download-body__button p {
+  padding-left: 40px;
+}
+
 .btn {
   display: inline-block;
   font-family: "Lato";
@@ -1062,6 +1157,53 @@ header {
   color: #26272d;
   border: 1px #dadcdf solid;
   border-radius: 30px;
+}
+.btn--green {
+  font-size: 16px;
+  white-space: nowrap;
+  padding: 13px 22px;
+  border-radius: 30px;
+  color: #fff;
+  background-color: #6fc754;
+}
+@media (max-width: 479.98px) {
+  .btn--green {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+}
+@media (max-width: 479.98px) and (max-width: 1170px) {
+  .btn--green {
+    padding-left: calc(15px + 7 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 479.98px) and (max-width: 1170px) {
+  .btn--green {
+    padding-right: calc(15px + 7 * ((100vw - 320px) / 850));
+  }
+}
+@media (max-width: 479.98px) {
+  .btn--green span {
+    padding-right: 30px;
+  }
+}
+@media (max-width: 479.98px) and (max-width: 1170px) {
+  .btn--green span {
+    padding-right: calc(15px + 15 * ((100vw - 0px) / 1170));
+  }
+}
+.btn--black {
+  text-align: center;
+  padding: 13px 22px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #131315;
+}
+.btn--black p {
+  font-size: 23px;
+  line-height: 22px;
 }
 .btn--get span {
   padding-left: 26px;
