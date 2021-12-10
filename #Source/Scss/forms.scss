@@ -2,13 +2,9 @@
 .btn{
 	display: inline-block;
 	font-family: 'Lato';
+	white-space: nowrap;
 	&--blue{
 		font-size: 16px;
-		// height: 42px;
-		// line-height: 42px;
-		// padding: 0px 22px;
-
-		padding: 13px 22px;
 		border-radius: 30px;
 		color: #fff;
 		background-color: #267df4;
@@ -61,6 +57,24 @@
 			font-size: 23px;
 			line-height: 22px;
 		}
+	}
+
+	&--white{
+		padding: 12px 40px;
+		font-size: 16px;
+		color: #2a80f4;
+		border: 1px #2a80f4 solid;
+		border-radius: 30px;
+
+		@media (max-width: $md1 + px){
+			@include adaptiv-value('padding-right', 40, 25, $md3);
+			@include adaptiv-value('padding-left', 40, 25, $md3);
+		};
+
+		@media (max-width: $md3 + px){
+			@include adaptiv-value('padding-right', 40, 20, $md4);
+			@include adaptiv-value('padding-left', 40, 20, $md4);
+		};
 	}
 
 	&--get {

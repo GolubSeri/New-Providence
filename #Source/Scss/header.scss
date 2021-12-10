@@ -41,6 +41,10 @@ header{
 	@media (max-width: $md1 + px){
 		@include adaptiv-value('margin-right', 40, 10, 320);
 	};
+
+	&.btn--blue {
+		padding: 13px 22px;
+	}
 }
 .right {
 	justify-content: flex-end;
@@ -60,3 +64,8 @@ header{
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
 }
+
+.menu__item {}
+.btn {}
+.btn--blue {}
+.btn--get {}
