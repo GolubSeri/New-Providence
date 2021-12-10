@@ -658,6 +658,117 @@ $md4:479.98;
 
 // ==================================
 
+.reviews {
+	padding: 130px 0px;
+	@media (max-width: $md1 + px){
+		@include adaptiv-value('padding-top', 130, 60, 320);
+		@include adaptiv-value('padding-bottom', 130, 40, 320);
+	};
+}
+.reviews-body {
+	text-align: center;
+	@include flexbox();
+	align-items: center;
+	justify-content: space-between;
+	&:hover{
+		.reviews-body__leftArrow{
+			visibility: visible;
+		}
+		.reviews-body__rightArrow{
+			visibility: visible;
+		}
+	}
+}
+.reviews-body-main {
+	@include flexbox();
+	flex-direction: column;
+	align-items: center;
+}
+.reviews-body-main__image {
+	@include flexbox();
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 70px;
+	@media (max-width: $md3 + px){
+		@include adaptiv-value('margin-bottom', 70, 40, 320);
+	};
+	img{
+		border-radius: 100px;
+		max-height: 90px;
+		opacity: 0.5;
+		&.mainImage{
+			max-height: 130px;
+			opacity: 1;
+		}
+		@media (max-width: $md4 + px){
+			display: none;
+			&.mainImage{
+				margin: 0px auto;
+				display: inline-block;
+			}
+		};
+	}
+}
+.reviews-body-main__title {
+	font-size: 32px;
+	font-weight: 300;
+	color: #26272d;
+	margin-bottom: 45px;
+	@include adaptiv-value('margin-bottom', 45, 35, 320);
+}
+.reviews-body-main__text {
+	max-width: 570px;
+	font-size: 20px;
+	line-height: 28px;
+	font-weight: 400;
+	color: #8c8f94;
+	margin-bottom: 30px;
+}
+.reviews-body-main__estimation {
+	margin-bottom: 70px;
+	@media (max-width: $md3 + px){
+		@include adaptiv-value('margin-bottom', 70, 35, 320);
+	};
+	img{
+		margin-right: 9px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+.reviews-body-main__name {
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: #26272d;
+}
+.reviews-body__leftArrow {
+	opacity: 0.5;
+	@media (max-width: 1300px){
+		padding-left: 30px;
+	};
+	@media (max-width: $md3 + px){
+		@include adaptiv-value('padding-right', 15, 10, 320);
+		@include adaptiv-value('padding-left', 15, 0, 320);
+	};
+	visibility: hidden;
+}
+.reviews-body__rightArrow {
+	opacity: 0.5;
+	@media (max-width: 1300px){
+		padding-right: 30px;
+	};
+	@media (max-width: $md3 + px){
+		@include adaptiv-value('padding-right', 15, 0, 320);
+		@include adaptiv-value('padding-left', 15, 10, 320);
+	};
+	visibility: hidden;
+}
+
+// ==================================
+
 // Подключаем footer
 @import "footer.scss";
 
