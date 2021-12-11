@@ -26,22 +26,19 @@
 
 	&--green{
 		font-size: 16px;
-		// height: 42px;
-		// line-height: 42px;
-		// padding: 0px 22px;
 		white-space: nowrap;
 		padding: 13px 22px;
 		border-radius: 30px;
 		color: #fff;
 		background-color: #6fc754;
 
-		@media (max-width: $md4 + px){
-			@include adaptiv-value('padding-left', 22, 15, 320);
-			@include adaptiv-value('padding-right', 22, 15, 320);
-			span{
-				@include adaptiv-value('padding-right', 30, 15, 0);
-			}
-		};
+		// @media (max-width: $md4 + px){
+		// 	@include adaptiv-value('padding-left', 22, 15, 320);
+		// 	@include adaptiv-value('padding-right', 22, 15, 320);
+		// 	span{
+		// 		@include adaptiv-value('padding-right', 30, 15, 0);
+		// 	}
+		// };
 	}
 
 	&--black{

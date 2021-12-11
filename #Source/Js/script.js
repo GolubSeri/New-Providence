@@ -8,9 +8,11 @@ function ibg(){
 ibg();
 
 function amh(){
-	if ($(window).width() > 479){
-		$(".amh").each(function () {
-		  	var mh = 0, block_class = this.classList.item(0);
+	$(".amh").each(function () {
+	  	var mh = 0, block_class = this.classList.item(0), lim = this.classList.item(2);
+	  	if ($(window).width() >= Number(lim))
+	  	{
+	  		console.log(lim)
 			$("." + block_class).each(function () {
 				$("." + block_class).css('min-height', 'auto');
 				var h_block = $(this).height();
@@ -19,15 +21,13 @@ function amh(){
 			    };
 			});
 			$("." + block_class).css('min-height', mh + 'px');
-		});
-	} else {
-		$(".amh").each(function () {
-		  	var block_class = this.classList.item(0);
-			$("." + block_class).each(function () {
+	  	} else {
+	  		console.log('Параметр работает')
+	  		$("." + block_class).each(function () {
 				$("." + block_class).css('min-height', 'auto');
 			});
-		});
-	}
+	  	}
+	});
 }
 
 amh();
