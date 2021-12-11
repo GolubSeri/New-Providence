@@ -103,6 +103,11 @@ $md4:479.98;
 	@media (max-width: $md4 + px){
 		margin-bottom: 50px;
 	};
+
+	@media (max-height: 720px){
+		height: 100%;
+		background-size: auto;
+	};
 }
 .main {
 	position: relative;
@@ -158,8 +163,12 @@ $md4:479.98;
 	@media (max-height: 950px){
 		margin-bottom: 30px;
 	};
-	margin-bottom: 60px;
+	@media (max-height: 720px){
+		margin-bottom: 20px;
+	};
+	margin-bottom: 20px;
 }
+
 .main__phone {
 	background-size: contain;
 	background-position: bottom;
@@ -170,6 +179,10 @@ $md4:479.98;
 	justify-content: flex-end;
 	width: 100%;
 	height: 100%;
+
+	@media (max-height: 720px){
+		height: 300px;
+	};
 }
 
 // ==================================
@@ -763,6 +776,7 @@ $md4:479.98;
 	@media (max-width: $md3 + px){
 		@include adaptiv-value('padding-right', 15, 10, 320);
 		@include adaptiv-value('padding-left', 15, 0, 320);
+		visibility: visible;
 	};
 	visibility: hidden;
 }
@@ -774,6 +788,7 @@ $md4:479.98;
 	@media (max-width: $md3 + px){
 		@include adaptiv-value('padding-right', 15, 0, 320);
 		@include adaptiv-value('padding-left', 15, 10, 320);
+		visibility: visible;
 	};
 	visibility: hidden;
 }
